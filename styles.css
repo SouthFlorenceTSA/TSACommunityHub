@@ -1,32 +1,34 @@
 :root {
   --bg: #ffffff;
-  --surface: #f9fafb;
-  --surface-2: #f3f4f6;
+  --surface: #fefce8;
   --text: #1f2937;
   --muted: #6b7280;
-  --primary: #10b981;
-  --primary-700: #059669;
-  --accent: #0891b2;
-  --ring: #34d399;
-  --brand: #065f46;
+  --primary: #eab308;
+  --primary-700: #a16207;
+  --accent: #16a34a;
+  --ring: #22c55e;
+  --brand: #15803d;
 }
 * {
   box-sizing: border-box;
 }
-html,
-body {
+html {
   height: 100%;
 }
 body {
+  height: auto;
   margin: 0;
   font-family: Inter, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  background: linear-gradient(180deg, var(--bg), #f0fdf4 40%, #ecfdf5);
+  background: linear-gradient(180deg, var(--bg), #fefce8 40%, #fef3c7);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   color: var(--text);
+  min-height: 100vh;
 }
 .site-gradient {
   background:
     radial-gradient(900px 340px at 80% -30%, rgba(16, 185, 129, .15), rgba(16, 185, 129, 0)),
-    radial-gradient(900px 340px at 20% -20%, rgba(8, 145, 178, .15), rgba(8, 145, 178, 0));
+    radial-gradient(900px 340px at 20% -20%, rgba(250, 204, 21, .15), rgba(250, 204, 21, 0));
 }
 .container {
   max-width: 1100px;
@@ -77,11 +79,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 0;
+  padding: 24px 0;
 }
 .branding h1 {
   margin: 0;
-  font-size: 24px;
+  font-size: 36px;
+  font-weight: 800;
   letter-spacing: .3px;
 }
 .branding .subtitle {
@@ -97,23 +100,39 @@ body {
 }
 .hero {
   padding: 48px 0;
+  min-height: 70vh;
+  background-image: url(Florence.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.gallery-hero {
+  padding: 48px 0;
+  color: var(--text);
 }
 .hero-wrap {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: inherit;
 }
 .hero-text h2 {
   margin: 0 0 10px;
   font-size: 34px;
+  color: white;
+  text-align: center;
 }
 .hero-text p {
   margin: 0 0 18px;
-  color: var(--muted);
+  color: white;
+  text-align: center;
 }
 .hero-cta {
   display: flex;
   gap: 12px;
+  justify-content: center;
 }
 .section-head {
   margin: 28px 0 16px;
@@ -140,6 +159,9 @@ body {
 }
 @media (max-width: 640px) {
   .card-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .hero-wrap { grid-template-columns: 1fr; }
 }
 .card {
   background: var(--surface);
@@ -181,7 +203,7 @@ body {
   flex-wrap: wrap;
 }
 .tag {
-  background: linear-gradient(180deg, var(--surface-2), #ecfdf5);
+  background: linear-gradient(180deg, var(--surface), #fef3c7);
   border: 1px solid #d1d5db;
   color: #065f46;
   font-size: 12px;
