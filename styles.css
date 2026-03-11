@@ -164,24 +164,36 @@ body {
   .hero-wrap { grid-template-columns: 1fr; }
 }
 .card {
-  background: var(--surface);
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
-  padding: 14px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  height: 240px; /* fixed height for all cards */
+  overflow: hidden;
+  text-align: center;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  background: var(--surface);
   transition: transform .2s ease, box-shadow .2s ease;
 }
+
 .card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, .35);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, .15);
 }
-.thumb {
+
+/* images */
+.card .thumb {
   width: 100%;
-  height: 150px;
+  height: 100%;
   object-fit: cover;
-  border-radius: 10px;
+  display: block;
+}
+
+/* videos */
+.card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .card .title {
   font-weight: 800;
@@ -335,7 +347,7 @@ select {
   color: #374151;
 }
 .reveal {
-  opacity: 0;
+  opacity: 1;
   transform: translateY(8px);
 }
 .reveal-in {
@@ -412,4 +424,16 @@ select.modern:disabled {
 option {
   color: var(--text);
   background: var(--surface-2);
+}
+.hero-image {
+  max-height: 200px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+.gallery-img {
+  width: 100%;
+  height: 160px;   /* reduced from 240 */
+  object-fit: cover;
+  display: block;
 }
